@@ -1,6 +1,6 @@
 import pytest
 
-from src.Noun import Case, Gender, Noun, declined_article
+from src.noun import Case, Gender, Noun, declined_article
 
 
 @pytest.fixture
