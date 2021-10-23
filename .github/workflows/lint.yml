@@ -1,0 +1,21 @@
+name: Lint
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+
+      - name: Install dependencies
+        run: pip install black isort
+
+      - name: Check formatting with black
+        run: black .
+
+      - name: Check sorting of imports with isort
+        run: isort .
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply formatting standard
