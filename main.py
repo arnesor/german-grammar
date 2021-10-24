@@ -1,6 +1,6 @@
 import random
 
-from src.noun import Noun, Case
+from src.noun import Case, Noun
 
 
 def example_sentence(case: Case, plural: bool) -> str:
