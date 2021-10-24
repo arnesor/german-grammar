@@ -26,7 +26,7 @@ def declined_article(gender: Gender, case: Case, plural: bool = False) -> str:
         return m_case[case]
     if gender == Gender.FEMININE:
         return f_case[case]
-    if gender == Gender.NEUTER:
+    else:  # Gender.NEUTER
         return n_case[case]
 
 
@@ -43,7 +43,7 @@ class Noun:
             return Gender.MASCULINE
         if self.article == "die":
             return Gender.FEMININE
-        if self.article == "das":
+        else:
             return Gender.NEUTER
 
     def nominative(self, plural: bool = False):
@@ -89,3 +89,13 @@ class Noun:
                 + " "
                 + self.plural_dative_noun
             )
+
+    def declined(self, case: Case, plural: bool) -> str:
+        if case == Case.NOMINATIVE:
+            return self.nominative(plural)
+        if case == Case.ACCUSATIVE:
+            return self.accusative(plural)
+        if case == Case.GENITIVE:
+            return self.genitive(plural)
+        else:  # Case.DATIVE:
+            return self.dative(plural)

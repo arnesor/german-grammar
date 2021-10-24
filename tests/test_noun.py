@@ -7,7 +7,7 @@ from src.noun import Case, Gender, Noun, declined_article
 def nouns():
     return {
         "Mann": Noun("der", "Mann", "Mannes", "Männer", "Männern"),
-        "Frau": Noun("die", "Frau", "Frau", "Frau", "Frau"),
+        "Frau": Noun("die", "Frau", "Frau", "Frauen", "Frauen"),
         "Kind": Noun("das", "Kind", "Kindes", "Kinder", "Kindern"),
     }
 

@@ -7,3 +7,9 @@ This repo contains a program for training German noun declensions.
 pipenv install --dev
 pipenv run pytest --cov --cov-report=term --cov-report=html
 ```
+
+## Usage
+From the root directory:
+```
+python main.py
+```
