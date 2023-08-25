@@ -1,6 +1,11 @@
+"""Command-line interface."""
 import random
+import secrets
 
-from src.noun import Case, Noun
+import click
+
+from .noun import Case
+from .noun import Noun
 
 
 def example_sentence(case: Case, plural: bool) -> str:
@@ -17,7 +22,10 @@ def example_sentence(case: Case, plural: bool) -> str:
         return "Ich gehe mit X."
 
 
-def main():
+@click.command()
+@click.version_option()
+def main() -> None:
+    """German Grammar."""
     nouns = [
         Noun("der", "Mann", "Mannes", "Männer", "Männern"),
         Noun("die", "Frau", "Frau", "Frauen", "Frauen"),
@@ -27,16 +35,16 @@ def main():
     correct_answers = 0
     num = int(input("Number of exercises: "))
     print("Replace 'X' in the sentences below with the correct article and noun:")
-    for i in range(num):
-        noun = random.choice(nouns)
-        answer_case = random.choice(list(Case))
-        answer_plural = random.choices([True, False], weights=(25, 75))[0]
+    for _ in range(num):
+        noun = secrets.choice(nouns)
+        answer_case = secrets.choice(list(Case))
+        answer_plural = random.choices([True, False], weights=(25, 75))[0]  # nosec
         if answer_plural:
             plural_text = "plural"
         else:
             plural_text = "singular"
         answer = input(
-            f"({noun.nominative()} in {str(answer_case)}, {plural_text}) "
+            f"({noun.nominative()} in {answer_case.name.lower()}, {plural_text}) "
             f"{example_sentence(answer_case, answer_plural)}: "
         )
         correct_answer = noun.declined(answer_case, answer_plural)
@@ -50,4 +58,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(prog_name="german-grammar")  # pragma: no cover

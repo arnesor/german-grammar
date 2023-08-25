@@ -1,0 +1,25 @@
+{
+  "template": "https://github.com/statisticsnorway/ssb-pypitemplate.git",
+  "commit": "eabcbb1654d61201edde196f650e63392be1100c",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "german-grammar",
+      "package_name": "german_grammar",
+      "friendly_name": "German Grammar",
+      "copyright_owner": "Arne Sørli",
+      "copyright_year": "2023",
+      "author": "Arne Sørli",
+      "email": "arnesor@users.noreply.github.com",
+      "github_organization": "arnesor",
+      "version": "0.0.0",
+      "license": "MIT",
+      "development_status": "Development Status :: 4 - Beta",
+      "_copy_without_render": [
+        "*.rst_t"
+      ],
+      "_template": "https://github.com/statisticsnorway/ssb-pypitemplate.git"
+    }
+  },
+  "directory": null
+}

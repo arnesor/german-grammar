@@ -1,0 +1,17 @@
+{
+  "_copy_without_render": [
+    "*.rst_t"
+  ],
+  "_template": "https://github.com/statisticsnorway/ssb-pypitemplate.git",
+  "author": "Arne S\u00f8rli",
+  "copyright_owner": "Arne S\u00f8rli",
+  "copyright_year": "2023",
+  "development_status": "Development Status :: 4 - Beta",
+  "email": "arnesor@users.noreply.github.com",
+  "friendly_name": "German Grammar",
+  "github_organization": "arnesor",
+  "license": "MIT",
+  "package_name": "german_grammar",
+  "project_name": "german-grammar",
+  "version": "0.0.0"
+}
