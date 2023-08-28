@@ -46,7 +46,7 @@ class Noun:
         else:
             return Gender.NEUTER
 
-    def nominative(self, plural: bool = False):
+    def nominative(self, plural: bool = False) -> str:
         if not plural:
             return self.article + " " + self.noun
         else:
@@ -56,7 +56,7 @@ class Noun:
                 + self.plural_noun
             )
 
-    def accusative(self, plural: bool = False):
+    def accusative(self, plural: bool = False) -> str:
         if not plural:
             return declined_article(self.gender(), Case.ACCUSATIVE) + " " + self.noun
         else:
@@ -66,7 +66,7 @@ class Noun:
                 + self.plural_noun
             )
 
-    def genitive(self, plural: bool = False):
+    def genitive(self, plural: bool = False) -> str:
         if not plural:
             return (
                 declined_article(self.gender(), Case.GENITIVE)
@@ -80,7 +80,7 @@ class Noun:
                 + self.plural_noun
             )
 
-    def dative(self, plural: bool = False):
+    def dative(self, plural: bool = False) -> str:
         if not plural:
             return declined_article(self.gender(), Case.DATIVE) + " " + self.noun
         else:

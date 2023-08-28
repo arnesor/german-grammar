@@ -22,6 +22,14 @@ def example_sentence(case: Case, plural: bool) -> str:
         return "Ich gehe mit X."
 
 
+def get_exercise_count() -> int:
+    return int(input("Number of exercises: "))
+
+
+def get_answer(question: str) -> str:
+    return input(question)
+
+
 @click.command()
 @click.version_option()
 def main() -> None:
@@ -33,7 +41,7 @@ def main() -> None:
     ]
 
     correct_answers = 0
-    num = int(input("Number of exercises: "))
+    num = get_exercise_count()
     print("Replace 'X' in the sentences below with the correct article and noun:")
     for _ in range(num):
         noun = secrets.choice(nouns)
@@ -43,7 +51,7 @@ def main() -> None:
             plural_text = "plural"
         else:
             plural_text = "singular"
-        answer = input(
+        answer = get_answer(
             f"({noun.nominative()} in {answer_case.name.lower()}, {plural_text}) "
             f"{example_sentence(answer_case, answer_plural)}: "
         )
