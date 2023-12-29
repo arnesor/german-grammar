@@ -27,7 +27,7 @@ This repo contains a program for training German noun declensions.
 
 ## Requirements
 
-- TODO
+- python >= 3.9
 
 ## Installation
 
